@@ -24,7 +24,14 @@ def persons(request):
     persons = Person.objects.all()
     return render(request, "main/persons.html",{'persons':persons})
 
-
+def deleteperson(request, id):
+    #if request.method == 'GET':
+    print(id)
+    print(Person.objects.all())
+    Person.objects.all().filter(pk=int(id)).delete()
+    print(Person.objects.all())
+    persons = Person.objects.all()
+    return render(request, 'main/persons.html', {'persons': persons})
 
 def person(request):
     if request.method == 'POST':

@@ -10,7 +10,10 @@
 {% for person in persons %}
   <tr>
 
-        <td>{{ person.nume }}</td> <td>{{person.phonenumber}}</td> <td>{{person.mail}}</td>
+      <td>{{ person.nume }}</td>
+      <td>{{person.phonenumber}}</td>
+      <td>{{person.mail}}</td>
+      <<td><a href="deleteperson/{{person.id}}">Delete</a></td>
  </tr>
 {% endfor %}
 
