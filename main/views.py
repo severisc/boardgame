@@ -10,12 +10,21 @@ def home(request):
 def formular(request):
     return render(request, "main/formular.html")
 
+
 def formular_submit(request):
     return render(request, "main/raspunsformular.html",{'name':request.POST['nume'],'prenume':request.POST['prenume'],'trimite':request.POST['trimite']})
 # Create your views here.
 
 from .forms import PersonForm
 from .models import Person
+
+
+def persons(request):
+    # Read ALL entries
+    persons = Person.objects.all()
+    return render(request, "main/persons.html",{'persons':persons})
+
+
 
 def person(request):
     if request.method == 'POST':

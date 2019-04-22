@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabel date ORM</title>
+</head>
+<body>
+<table border="1">
+
+{% for person in persons %}
+  <tr>
+
+        <td>{{ person.nume }}</td> <td>{{person.phonenumber}}</td> <td>{{person.mail}}</td>
+ </tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
